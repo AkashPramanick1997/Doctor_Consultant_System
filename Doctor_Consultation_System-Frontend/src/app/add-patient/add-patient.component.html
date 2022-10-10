@@ -1,0 +1,99 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" disable>List of Patient</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/add-patient"> <span class="sr-only">Add Patient</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/patients-deatils">Details Of indivisual Patient</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+<form class="border p-4" (ngSubmit)="onFormSubmit()">
+    <div class="row g-0">
+        <div class="col text-center p-2 mb-3 bg-light">
+            <span class="fs-3">Patient Registration</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col mb-3">
+            <label for="firstname" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="fName" name="fName" [(ngModel)]="patient.fName">
+        </div>
+
+        <div class="col mb-3">
+            <label for="lasttname" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="lName" name="lName" [(ngModel)]="patient.lName">
+
+        </div>
+    </div>
+
+    <div class="row ">
+    <div class="form-group col-md-6">
+        <label for="visiteddoc" class="form-label">Visited Doctor</label>
+        <select id="inputdoc" class="form-control" name="visitedDctor" [(ngModel)]="patient.visitedDoctor">
+            <option selected  value="">Select Doctor Name</option>
+            <option value="Ayan Hussain">Ayan Hussain</option> 
+            <option value="Moumita Das">Moumita Das</option>
+            <option value="Rina Pramanick">Rina Pramanick</option>
+            <option value="Purnendu Shaoo">Purnendu Shaoo</option>
+        </select>
+    </div> 
+    </div>
+        <br> 
+    <div class="row">
+        <div class="col mb-3">
+            <label for="date" class="form-label">Date of Visit</label>
+            <input type="date" class="form-control" id="date" name="date" [(ngModel)]="patient.dateOfVisit">
+            <div class="form-text"> </div>
+        </div>
+        <div class="col ps-3 mb-3">
+            <div class="m-1">Gender</div>
+            <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input" value="m" id="male">
+                <label class="form-check-label" for="male">Male</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input" value="f" id="female">
+                <label class="form-check-label" for="female">Female</label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col mb-3">
+            <label for="pwd" class="form-label">Password</label>
+            <input type="password" class="form-control" id="pwd">
+            <div class="form-text"></div>
+        </div>
+
+        <div class="col mb-3">
+            <label for="rpwd" class="form-label">Repeat Password</label>
+            <input type="password" class="form-control" id="rpwd">
+            <div class="form-text"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary">Register</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<footer class="bg-light text-center text-lg-start">
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2022 Copyright:
+      <a class="text-dark" href="#">DoctorManagementSystem.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>

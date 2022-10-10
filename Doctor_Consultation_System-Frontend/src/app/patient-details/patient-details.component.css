@@ -1,0 +1,11 @@
+.sectionError{
+    border: 2px solid red;
+    padding: 10px;
+    text-align: center;
+    text-shadow: 2px 2px 3px;
+    background-color: whitesmoke;
+}
+body{
+    color: pink;
+    background-color: palegreen;
+}

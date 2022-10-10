@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" disable>List of Patient</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/add-patient">
+          <span class="sr-only">Add Patient</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/patients-deatils">Details Of indivisual Patient</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<hr />
+<div class="container">
+  <h2>
+    <b><i>List Of Patients</i></b>
+  </h2>
+  <hr />
+  <table class="table table-striped table-dark">
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Visite Doctor</th>
+        <th>date Of Visit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pt of patients">
+        <td>{{ pt.fName }}</td>
+        <td>{{ pt.lName }}</td>
+        <td>{{ pt.visitedDoctor }}</td>
+        <td>{{ pt.dateOfVisit | date: "medium" }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<footer class="bg-light text-center text-lg-start">
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+    © 2022 Copyright:
+    <a class="text-dark" href="#">DoctorManagementSystem.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>

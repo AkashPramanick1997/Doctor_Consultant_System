@@ -1,0 +1,10 @@
+.selectForm{
+    margin-top: 5px;
+    padding: 4px;
+    border-radius: 3px;
+}
+.selectItem{
+    padding: 5px;
+    font-size: medium;
+    color: grey;
+}

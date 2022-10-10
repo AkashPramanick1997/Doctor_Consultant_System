@@ -1,0 +1,8 @@
+body{
+    background-color: aqua;
+    
+}
+.bgimg{
+    background-image: url("../assets/bg1.jpg");
+    background-color: #cccccc;
+}

@@ -1,0 +1,86 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" routerLink="/doctors">List of Doctor</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/add-doctor" routerLinkActive="active">
+          <span class="sr-only">Add Doctor</span></a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/doctor">
+          <span class="sr-only">Details Of Indivisual Doctor</span></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<hr />
+
+<div class="card">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()">
+      <h2> <b><i>Select Doctor Name</i></b> </h2>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 offet-sm-3">
+            <div class="form-group selectForm">
+              <select name="doctor" id="doctor" class="custome-select selectForm" [(ngModel)]="docId">
+                <option value="" selected>Select Doctor</option>
+                <option *ngFor=" let doc of doctors" value="{{doc.id}}" class="selectItem">{{doc.fName}} {{ doc.lName}}
+                </option>
+              </select>
+            </div><br>
+            <button class="btn btn-primary" type="submit"> Show Details</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<br>
+
+<div class="card">
+  <div class="card-body">
+    <h3 class=" text-primary">Details of Selected doctor with Id {{newDocId}}</h3>
+    <hr />
+    <div class="row">
+      <div class="col-sm-9 offet-sm-3">
+        <table class="table table-striped">
+          <thead>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Specialist</th>
+            <th>Number Of Patient Attented</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{ doctor.fName }}</td>
+              <td>{{ doctor.lName }}</td>
+              <td>{{ doctor.age }}</td>
+              <td>{{ doctor.gender }}</td>
+              <td>{{ doctor.specialist }}</td>
+              <td>{{ numberOfPatients}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<footer class="bg-light text-center text-lg-start">
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2022 Copyright:
+    <a class="text-dark" href="#">DoctorManagementSystem.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
